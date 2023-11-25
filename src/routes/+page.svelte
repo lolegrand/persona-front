@@ -13,7 +13,7 @@
 
     // Fetch
     onMount(async () => {
-        const response = await fetch(`http://proxy/persona`)
+        const response = await fetch(`http://persona.lolegrand.fr/persona`)
         $personaArray = await response.json()
     })
 
@@ -21,7 +21,7 @@
     async function handleDeletePersona(event) {
         let id = event.detail.persona.id
         console.log(id)
-        const response = await fetch(`http://proxy/persona/${id}`, {method: 'DELETE'})
+        const response = await fetch(`http://persona.lolegrand.fr/persona/${id}`, {method: 'DELETE'})
         $personaArray = await response.json()
     }
 
@@ -48,7 +48,7 @@
             'dateOfBirth': persona.dateOfBirth,
             'thumbnail': persona.thumbnail
         }
-        let response = await fetch(`http://proxy/persona`, {
+        let response = await fetch(`http://persona.lolegrand.fr/persona`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
