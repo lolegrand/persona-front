@@ -10,10 +10,11 @@
     // Datas
     let selectedPersona = null
     const personaArray = writable([])
+    const personappUrl = "http://personapp-proxy:80"
 
     // Fetch
     onMount(async () => {
-        const response = await fetch(`http://persona.lolegrand.fr/persona`)
+        const response = await fetch(`${personappUrl}/persona`)
         $personaArray = await response.json()
     })
 
@@ -21,7 +22,7 @@
     async function handleDeletePersona(event) {
         let id = event.detail.persona.id
         console.log(id)
-        const response = await fetch(`http://persona.lolegrand.fr/persona/${id}`, {method: 'DELETE'})
+        const response = await fetch(`${personappUrl}/persona/${id}`, {method: 'DELETE'})
         $personaArray = await response.json()
     }
 
@@ -48,7 +49,7 @@
             'dateOfBirth': persona.dateOfBirth,
             'thumbnail': persona.thumbnail
         }
-        let response = await fetch(`http://persona.lolegrand.fr/persona`, {
+        let response = await fetch(`${personappUrl}/persona`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
