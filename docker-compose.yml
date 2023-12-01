@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  frontend:
+    build: https://github.com/lolegrand/persona-front.git
+    image: personapp-front:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - personapp-network
+
+  backend:
+    build: https://github.com/lolegrand/persona-back.git
+    image: personapp-back:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - personapp-network
+
+networks:
+  personapp-network: {}
+
+
