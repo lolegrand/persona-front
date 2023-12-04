@@ -13,7 +13,7 @@ services:
     build: https://github.com/lolegrand/persona-back.git
     image: personapp-back:latest
     ports:
-      - "80:8080"
+      - "80:80"
     networks:
       - personapp-network
 
