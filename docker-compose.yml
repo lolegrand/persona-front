@@ -5,7 +5,7 @@ services:
     build: https://github.com/lolegrand/persona-front.git
     image: personapp-front:latest
     ports:
-      - "3000:3000"
+      - "80:3000"
     networks:
       - personapp-network
 
