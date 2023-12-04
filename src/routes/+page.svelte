@@ -10,7 +10,7 @@
     // Datas
     let selectedPersona = null
     const personaArray = writable([])
-    const personappUrl = "http://50.50.50.200:8080"
+    const personappUrl = "http://50.50.50.200"
 
     // Fetch
     onMount(async () => {
